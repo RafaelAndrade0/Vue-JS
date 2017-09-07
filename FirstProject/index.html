@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>VueJs ROCKS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>        
+    </head>
+    <body>
+
+        <div id="vue-app">
+            <h1>{{ mensagem }}</h1>
+            <p>{{ greet() }}</p>
+
+            <a v-bind:href="url">Click Me!</a>
+
+            <h2> Your age is: {{ age }}</h2>
+            <button v-on:click="addAYear(1)">Add a year</button>
+            <button v-on:click="subtractAYear(1)">Subtract a year</button>
+            <button v-on:dblclick="doubleYear()">Double year</button>
+            
+            <br><br>
+            <div id="canvas" v-on:mousemove="updateXY()">
+                <p>{{x}} , {{y}}</p>
+            </div>
+
+            <a v-on:click.prevent="alertSome()"href="http://www.reddit.com">Reddit Link</a>
+
+
+        </div>
+
+        <!-- Como adicionar duas instancias Vue no mesmo .js? -->
+        <div id="vue-app2">
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

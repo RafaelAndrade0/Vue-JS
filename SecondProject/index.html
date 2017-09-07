@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>{{helloWorld()}}</h1>
+            <ul>
+                <li v-for="item in items">
+                    {{item.message}}
+                </li>
+            </ul>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

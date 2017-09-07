@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Two-Way Data Binding</h1>
+            <label>Name: {{ name }}</label> <br>
+            <!-- Enter Modifier -->
+            <input type="text" v-model="name" /><br>
+            <label>Age:{{ age }}</label><br>
+            <input type="text" v-model="age" />
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
