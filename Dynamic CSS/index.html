@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Computed Properties</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <!--<h1>Dynamic CSS</h1>
+            <h2>Example 1</h2>
+
+            <div v-on:click="available = !available" v-bind:class="{available: available}">
+                <span>Ryu</span>
+            </div> -->
+
+            <h2>Example 2</h2>
+            <div v-bind:class="compClasses">
+                <span>Ryu</span>
+                <button v-on:click="available = !available">Mudar available</button>
+                <button v-on:click="nearby = !nearby">Mudar nearby</button>
+            </div>
+            
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
