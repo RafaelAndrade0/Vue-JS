@@ -5,6 +5,13 @@
     background: url("../images/charmander.gif") center no-repeat;
 }
 
+#charmander.defeated {
+    background: url("../images/defeated.jpg") center no-repeat;
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+}
+
 #description {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -21,7 +28,7 @@
 }
 
 #charmander-hp {
-    width: 200px;
+    width: 300px;
     border: 2px solid black;
     margin: 0 auto 20px auto;
 }
@@ -33,6 +40,12 @@
 
 #controls {
     text-align: center;
+    margin: 0 auto;
+}
+
+#controls p {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
 }
 
 #button1 {

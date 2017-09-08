@@ -10,26 +10,47 @@
     <body>
         <div id="vue-app">
             <!-- Charmander Image -->
-            <div id="charmander"></div>
+            <!-- Quando o jogo acabar (ended = true) a classe defeated é criada
+                então basta alterar o CSS dela (#charmander defeated) -->
+            <div v-bind:class="{defeated: endGame}" id="charmander"></div>
 
             <!-- Description -->
             <div id="description">
-                <h3>"Iaí moral. Esse é o Charmander que porta o Kit. Passa o celular!"</h3>
-                <p>DERROTE O CHARMANDER ANTES DE PERDER O CELULAR</p>
+                <h3 v-show="!endGame">"Iaí moral. Esse é o Charmander que porta o Kit. Passa o celular!"</h3>
+                <p v-show="!endGame">DERROTE O CHARMANDER ANTES DE PERDER O CELULAR</p>
             </div>
 
             <!-- Charmander HP -->
             <div id="charmander-hp">
-                <div></div>
+                <!-- Altera o valor em porcentagem (%) do atributo
+                    width em #charmander-hp div. O valor do hp + %.
+                    Ex: 50hp vai ser igual a 50% de width da barra! -->
+                <div v-bind:style="{width: hp + '%'}"></div>
             </div>
 
             <!-- Game Controls -->
             <div id="controls">
-                <button id="button1">Ataque o Charmander!!!!</button><br><br>
-                <button id="button2">Reinicie o Jogo</button>
+                <button v-on:click="punch()" v-show="!endGame" id="button1">Ataque o Charmander!!!!</button><br><br>
+                
+                <p v-if="endGame">
+                    O charmander morreu e tu recuperou o celular. É noix mlk!
+                </p>
+                
+                <button v-on:click="restart()" id="button2">Reinicie o Jogo</button>
+
             </div>
 
-            
+            <!-- Audio Control -->
+            <div id="audio">
+                                
+                <div v-if="!endGame" id="audioON">
+                    <audio v-if="!endGame" autoplay="autoplay" loop>
+                        <source src="/Defeat The Charmander Game/audio/pokemon.mp3" type="audio/mpeg">
+                    </audio>       
+                </div>
+
+            </div>
+        
         </div>
         <script src="app.js"></script>
     </body>
