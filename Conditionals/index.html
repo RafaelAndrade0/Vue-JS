@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Conditionals</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Conditionals</h1>
+            <button v-on:click="error = !error">Mudar Erro</button>
+            <button v-on:click="sucess = !sucess">Mudar Sucesso</button>
+            
+            <p v-if="error">Ocorreu um erro</p>
+            <!-- Só checa a próxima linha se a anterior for FALSA. -->
+            <p v-else-if="sucess">Ocorreu tudo ok!</p>
+            
+            <!-- Também dá pra usar v-show -->
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

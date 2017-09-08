@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Conditionals</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>Loop em Listas</h1>
+            <ul>
+                <!-- For loop -->
+                <li v-for="(personagem, index) in personagens">
+                    {{ index }} . {{ personagem }}
+                </li>
+            </ul>
+
+            <ul>
+                <!-- For Loop numa lista de Objetos -->
+                <li v-for="ninja in ninjas">
+                    {{ninja.name}} - {{ninja.age}}
+                </li>
+            </ul>
+
+            <!-- Templates não são imprimidos no DOM num for Loop -->
+            <template v-for="(ninja, index) in ninjas">
+                <h3>{{ index }} . {{ ninja.name }}</h3>
+                <p>{{ ninja.age }}</p>
+            </template>
+
+            <!-- val e key são usados quando não se sabe o "nome"
+                especifico dos objetos (no caso, name e age) -->
+            <template v-for="ninja in ninjas">
+                <div v-for="(val, key) in ninja">
+                    <p>{{ key }} - {{ val }}</p>
+                </div>
+            </template>
+            
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
