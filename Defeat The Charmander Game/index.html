@@ -46,20 +46,28 @@
 
             <!-- Audio Control -->
             <div id="audio">
-                                
+                <!--<audio v-if="!endGame" autoplay="autoplay" loop>
+                    <source src="/Defeat The Charmander Game/audio/pokemon.mp3" type="audio/mpeg">
+                </audio>
+
+                <audio v-if="endgame" autoplay="autoplay" loop>
+                    <source src="/Defeat The Charmander Game/audio/victory.mp3" type="audio/mpeg">
+                </audio>-->
+
                 <div v-show="!endGame" id="audioON">
                     <audio v-if="!endGame" autoplay="autoplay" loop>
                         <source src="/Defeat The Charmander Game/audio/pokemon.mp3" type="audio/mpeg">
                     </audio>
                     
-                    <div v-if="endGame" id="audiOFF">
+                   <div v-if="endGame" id="audiOFF">
                         <audio v-if="endGame" autoplay="autoplay" loop>
                             <source src="/Defeat The Charmander Game/audio/victory.mp3" type="audio/mpeg">
                         </audio>               
                     </div>
-                    
                 </div>
+                
             </div>
+
         </div>
         <script src="app.js"></script>
     </body>
